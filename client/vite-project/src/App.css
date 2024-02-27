@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  height: 100vh;
+}
+
+h1{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgba(0, 0, 0, 0.596);
+  color: white;
+  padding: 20px 0;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   margin-top: 80px;
+}
+.form button{
+  display: block;
+  padding: 10px 12px;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 255, 0.829);
+  color: white;
+  border-color: blue;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.form button:hover{
+  background-color: rgba(0, 0, 255, 0.651);
+}
+.form input{
+  padding: 12px 10px;
+  width: 400px;
+  outline: none;
+  border-radius: 10px;
+}
+
+.summaries {
+  background-color: black;
+  color: white;
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  overflow-y: auto; /* Enable y-axis scrolling for the summaries */
+  max-height: calc(100vh - 270px);; /* Adjusted height considering header and form heights */
+  font-size: 18px;
+  overflow-x: hidden;
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width:600px) {
+  .form input{
+    width: 100%;
+  }
+  .summaries{
+    width: 90%;
+  }
+  .form input::placeholder{
+    font-size: 16px;
+  }
+  h1{
+    font-size: 16px;
+    font-weight: bolder;
+  }
+}
