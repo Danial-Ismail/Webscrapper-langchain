@@ -9,10 +9,11 @@ import {loadSummarizationChain} from "langchain/chains";
 import { PromptTemplate } from "@langchain/core/prompts";
 
 const corsOptions = {
-    origin: 'https://webscrapper-langchain-client-51fadjt4l-danial-imsails-projects.vercel.app/',
+    origin: "*",
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
+
 
 const app = express();
 dotenv.config();
