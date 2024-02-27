@@ -9,7 +9,7 @@ import {loadSummarizationChain} from "langchain/chains";
 import { PromptTemplate } from "@langchain/core/prompts";
 
 const corsOptions = {
-    origin: 'https://webscrapper-langchain-client.vercel.app',
+    origin: 'https://webscrapper-langchain-client-51fadjt4l-danial-imsails-projects.vercel.app/',
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
