@@ -2,15 +2,23 @@ import { useState } from 'react'
 import './App.css'
 import axios from "axios";
 import {RevolvingDot} from "react-loader-spinner"
+import validator from 'validator';
 
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [summaries, setSummaries] = useState("");
   const[loading,setLoading]=useState(false)
+  const[error,setError]=useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true)
+    setError("");
+    if(!validator.isURL(inputValue)){
+      setError("Please enter a valid URL");
+      setLoading(false);
+      return;
+    }
     try {
       const res = await axios.get(`http://localhost:5050/scrape?url=${encodeURIComponent(inputValue)}`);
       setSummaries(res.data.summarizedResult.text);
@@ -36,6 +44,9 @@ function App() {
           <RevolvingDot visible={true} height={30} width={30} color='blue' />
         </div>
       )}
+      {error && (
+          <div className='error-message'>{error}</div>
+        )}
       {summaries && (
           <div className='summaries'>
            <p>{summaries}</p>
