@@ -9,7 +9,7 @@ import {loadSummarizationChain} from "langchain/chains";
 import { PromptTemplate } from "@langchain/core/prompts";
 
 const corsOptions = {
-    origin: "*",
+    origin: "http://localhost:5173",
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
