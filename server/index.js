@@ -27,6 +27,9 @@ app.get("/scrape", async (req, res) => {
     try {
 
         const url = req.query.url;
+        if(!url || typeof url !== "string"){
+            throw new Error("URL is missing or invalid")
+        }
         const loader = new PuppeteerWebBaseLoader(url,
             {
                 launchOptions: {
